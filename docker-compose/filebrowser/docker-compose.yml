@@ -11,6 +11,6 @@ services:
     environment:
       - FB_BASEURL=/filebrowser
       - FB_NOAUTH=true #!Added NoAuth so Family members can access without passwords
-    restart: unless-stopped
+    restart: always
 
     #https://hub.docker.com/r/hurlenko/filebrowser
