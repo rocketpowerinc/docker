@@ -13,7 +13,7 @@ services:
       - ./config:/config
       - "${USERPROFILE}/Downloads:/downloads"
     ports:
-      - 5799:8080
+      - 3010:8080
       - 6881:6881
       - 6881:6881/udp
     restart: unless-stopped
