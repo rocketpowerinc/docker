@@ -7,13 +7,13 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Etc/UTC
-      - WEBUI_PORT=8080
+      - WEBUI_PORT=5799
       - TORRENTING_PORT=6881
     volumes:
       - ./config:/config
       - "${USERPROFILE}/Downloads:/downloads"
     ports:
-      - 3010:8080
+      - 5799:5799
       - 6881:6881
       - 6881:6881/udp
     restart: unless-stopped
