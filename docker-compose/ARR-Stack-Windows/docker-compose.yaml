@@ -27,11 +27,11 @@ services:
       - CONFIG_DIR=/app/config
     volumes:
       # Mount your actual media directories here - these paths should match your config.toml
-      - ./mediamanager/data/:/data/ # Example: change ./data/ to your actual media root
+      - ./mediamanager/data:/data # Example: change ./data/ to your actual media root
       # Config folder for application configuration
-      - ./mediamanager/config/:/app/config/
+      - ./mediamanager/config:/app/config
       # Image folder
-      - ./mediamanager/images/:/data/images/
+      - ./mediamanager/images:/data/images
   db:
     image: postgres:latest
     restart: always
@@ -56,7 +56,7 @@ services:
       - PGID=1000
       - TZ=Etc/UTC
     volumes:
-      - ./prowler/config/:/config
+      - ./prowlarr/config:/config
     ports:
       - 9696:9696
     restart: always
