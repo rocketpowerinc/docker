@@ -6,4 +6,4 @@ services:
     ports:
       - "3013:3000"
     volumes:
-      - "${HOME}/Downloads:/spooty/backend/downloads"
+      - "${USERPROFILE}/Downloads:/spooty/backend/downloads"
