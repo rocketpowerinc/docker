@@ -6,7 +6,7 @@ services:
     ports:
       - 3000:8080
     volumes:
-      - /home/rocket:/data #*Navigation Home directory
+      - "${HOME}:/data" #*Navigation Home directory
       - ./config:/config
     environment:
       - FB_BASEURL=/filebrowser
