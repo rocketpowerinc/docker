@@ -1,7 +1,7 @@
 services:
   tinyfilemanager:
     container_name: tinyfilemanager
-    image: prasathmani/tinyfilemanager:master
+    image: tinyfilemanager/tinyfilemanager:master
     volumes:
       - "${USERPROFILE}:/var/www/html/data"
     ports:
