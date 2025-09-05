@@ -3,7 +3,7 @@ services:
     image: dockurr/macos
     container_name: macos
     environment:
-      VERSION: "15"
+      VERSION: "14" #15 does not allow user to sign into Apple ID
       DISK_SIZE: "50G"
       RAM_SIZE: "8G"
       CPU_CORES: "4"
