@@ -9,7 +9,7 @@ services:
       - NGINX_AUTORELOAD= #optional
       - NGINX_AUTORELOAD_WATCHLIST= #optional
     volumes:
-      - /path/to/nginx/config:/config
+      - ./config:/config
     ports:
       - 80:80
       - 443:443
