@@ -1,0 +1,12 @@
+services:
+  ersatztv:
+    image: ghcr.io/ersatztv/ersatztv
+    container_name: ersatztv
+    restart: unless-stopped
+    environment:
+      - TZ=America/Toronto
+    ports:
+      - "8409:8409"
+    volumes:
+      - ./config:/config
+      - "${USERPROFILE}/Downloads:/downloads:ro"
