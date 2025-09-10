@@ -10,3 +10,4 @@ services:
     volumes:
       - ./config:/config
       - "${USERPROFILE}/Downloads:/downloads:ro"
+#
