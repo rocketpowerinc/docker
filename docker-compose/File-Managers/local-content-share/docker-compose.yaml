@@ -1,0 +1,8 @@
+services:
+  contentshare:
+    image: tanq16/local-content-share:main
+    container_name: local-content-share
+    volumes:
+      - ./data:/app/data # Change as needed
+    ports:
+      - 3019:8080
