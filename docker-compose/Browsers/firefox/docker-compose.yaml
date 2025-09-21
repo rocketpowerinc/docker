@@ -15,6 +15,6 @@ services:
       - ./config:/config
     ports:
       - 3020:3000
-      #- 3001:3001 #optional for VNC
+      - 3021:3001
     shm_size: "1gb"
     restart: always
