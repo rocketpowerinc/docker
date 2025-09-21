@@ -19,6 +19,6 @@ services:
       image: ghcr.io/imputnet/cobalt-web:latest
       restart: unless-stopped
       ports:
-        - "9001:3000/tcp"
+        - "9001:3000"
       environment:
         API_URL: # ->> Connects directly to the API
