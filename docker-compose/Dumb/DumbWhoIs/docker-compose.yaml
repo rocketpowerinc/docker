@@ -4,7 +4,7 @@ services:
     container_name: dumbwhois
     restart: unless-stopped
     ports:
-      - 4007:3000
+      - 4006:3000
     environment:
       - DumbWhois
     # (Optional) Restrict origins - ex: https://subdomain.domain.tld,https://auth.proxy.tld,http://internalip:port' (empty/default is '*')

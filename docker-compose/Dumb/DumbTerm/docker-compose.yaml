@@ -4,7 +4,7 @@ services:
     container_name: dumbterm
     restart: unless-stopped
     ports:
-      - 4006:3000
+      - 4005:3000
     volumes:
       - ./config:/root/.config
       - ./data:/root/data
@@ -16,7 +16,7 @@ services:
       # Recommended PIN protection (leave empty to disable)
       DUMBTERM_PIN: 1234
       # The base URL for the application
-      BASE_URL: http://192.168.1.2:4006
+      BASE_URL: http://192.168.1.2:4005
       ENABLE_STARSHIP: true
       LOCKOUT_TIME: 15 # Minutes
       # Session duration in hours before requiring re-authentication

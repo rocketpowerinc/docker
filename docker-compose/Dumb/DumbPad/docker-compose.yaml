@@ -4,7 +4,7 @@ services:
     container_name: dumbpad
     restart: unless-stopped
     ports:
-      - 4005:3000
+      - 4004:3000
     volumes:
       - ./data:/app/data
     environment:

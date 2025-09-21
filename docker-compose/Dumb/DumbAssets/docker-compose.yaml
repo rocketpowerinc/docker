@@ -11,7 +11,7 @@ services:
       NODE_ENV: production
       DEBUG: True
       SITE_TITLE: DumbAssets
-      BASE_URL: 192.168.1.2:4000
+      BASE_URL: http://192.168.1.2:4000
       DUMBASSETS_PIN: 1234
       ALLOWED_ORIGINS: "*"
       CURRENCY_CODE: USD
