@@ -8,9 +8,7 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Etc/UTC
-      - FIREFOX_CLI=https://www.linuxserver.io/,https://rocketdashboard.notion.site/Welcome-to-RocketPowerInc-1a1627bc6fd8805ab693f164a1b3ceda #optional
-      - NOVNC_LISTEN=0.0.0.0
-      - VNC_LISTEN=0.0.0.0
+      - FIREFOX_CLI=https://rocketdashboard.notion.site/Welcome-to-RocketPowerInc-1a1627bc6fd8805ab693f164a1b3ceda #optional
     volumes:
       - ./config:/config
     ports:
