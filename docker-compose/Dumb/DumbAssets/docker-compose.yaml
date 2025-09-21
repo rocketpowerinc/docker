@@ -1,0 +1,18 @@
+services:
+  dumbassets:
+    container_name: dumbassets
+    image: dumbwareio/dumbassets:latest
+    restart: unless-stopped
+    ports:
+      - 4000:3000
+    volumes:
+      - ./data:/app/data
+    environment:
+      NODE_ENV: production
+      DEBUG: True
+      SITE_TITLE: DumbAssets
+      BASE_URL: 192.168.1.2:4000
+      DUMBASSETS_PIN: 1234
+      ALLOWED_ORIGINS: "*"
+      CURRENCY_CODE: USD
+      CURRENCY_LOCALE: en-US

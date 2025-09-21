@@ -1,0 +1,12 @@
+services:
+  dumbdo:
+    image: dumbwareio/dumbdo:latest
+    container_name: dumbdo
+    restart: unless-stopped
+    ports:
+      - 4003:3000
+    volumes:
+      - ./data:/app/data
+    environment:
+      - DUMBDO_PIN=1234
+      - DUMBDO_SITE_TITLE=DumbDo

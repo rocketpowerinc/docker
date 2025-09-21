@@ -1,0 +1,13 @@
+services:
+  app:
+    build: .
+    container_name: dumbdateparser
+    environment:
+      - TZ=America/Toronto
+      - PORT=4002
+    ports:
+      - "4002:3001"
+    volumes:
+      - ./:/app
+    user: "node"
+    restart: unless-stopped

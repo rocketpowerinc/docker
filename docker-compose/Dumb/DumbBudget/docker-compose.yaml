@@ -1,0 +1,15 @@
+services:
+  dumbbudget:
+    image: dumbwareio/dumbbudget:latest
+    container_name: dumbbudget
+    restart: unless-stopped
+    ports:
+      - 4001:3000
+    volumes:
+      - ./data:/app/data
+    environment:
+      - DUMBBUDGET_PIN=1234 # PIN to access the site
+      - BASE_URL= 192.168.1.2:4001
+      - CURRENCY= USD # Supported Currency Code: https://github.com/DumbWareio/DumbBudget?tab=readme-ov-file#supported-currencies
+      - SITE_TITLE= DumbBudget # Name to show on site
+
