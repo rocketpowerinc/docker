@@ -1,16 +1,24 @@
 services:
-  cobalt-api:
-    image: ghcr.io/imputnet/cobalt:latest
-    restart: unless-stopped
-    ports:
-      - "9000:9000"
-    environment:
-      API_URL: ""
+    cobalt:
+        image: ghcr.io/imputnet/cobalt:latest
 
-  cobalt-web:
-    image: ghcr.io/imputnet/cobalt-web:latest
-    restart: unless-stopped
-    ports:
-      - "9001:3000"
-    environment:
-      API_URL: # ->> Connects directly to the API
+        init: true
+        read_only: true
+        restart: unless-stopped
+        container_name: cobalt
+
+        ports:
+            - 9000:9000/tcp
+
+        environment:
+            API_URL: "https://192.168.1.2:9000/"
+        labels:
+            - com.centurylinklabs.watchtower.scope=cobalt
+
+    cobalt-web:
+      image: ghcr.io/imputnet/cobalt-web:latest
+      restart: unless-stopped
+      ports:
+        - "9001:3000/tcp"
+      environment:
+        API_URL: # ->> Connects directly to the API
