@@ -10,15 +10,8 @@ services:
         ports:
             - 9000:9000/tcp
 
-        environment:
-            API_URL: "https://192.168.1.2:9000/"
-        labels:
-            - com.centurylinklabs.watchtower.scope=cobalt
-
     cobalt-web:
       image: ghcr.io/imputnet/cobalt-web:latest
       restart: unless-stopped
       ports:
         - "9001:3000"
-      environment:
-        API_URL: # ->> Connects directly to the API
