@@ -1,6 +1,6 @@
 services:
   docs:
-    image: ghcr.io/codex-team/codex.docs:v2
+    image: ghcr.io/codex-team/codex.docs:latest
     ports:
       - 127.0.0.1:3025:3000
     environment:
