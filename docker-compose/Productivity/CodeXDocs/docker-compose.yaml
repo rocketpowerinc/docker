@@ -1,8 +1,8 @@
 services:
   docs:
-    image: ghcr.io/codex-team/codex.docs:latest
+    image: ghcr.io/codex-team/codex.docs:v2
     ports:
-      - "3025:3000"
+      - 127.0.0.1:3025:3000
     environment:
       - APP_CONFIG_auth_password=codex
     volumes:
