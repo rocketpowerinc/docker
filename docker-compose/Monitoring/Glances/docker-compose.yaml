@@ -1,0 +1,31 @@
+# Configuration for big-bear-glances setup
+name: glances
+
+# Service definitions for the big-bear-glances application
+services:
+  # Service name: app
+  app:
+    # Name of the container
+    container_name: glances
+
+    # Docker image to use
+    image: nicolargo/glances:latest
+
+    # Port mapping between host and container
+    ports:
+      - 61208:61208
+
+    # Environment variables
+    environment:
+      - TZ=America/Toronto
+      - GLANCES_OPT=-w # Glances option to run as a web server
+
+    # Use the host's PID namespace
+    pid: host
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Volumes to mount into the container
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro # Docker socket for monitoring
