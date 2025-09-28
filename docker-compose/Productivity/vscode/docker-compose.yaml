@@ -1,0 +1,18 @@
+# Configuration for big-bear-code-server setup
+name: vscode
+services:
+  code-server:
+    image: lscr.io/linuxserver/code-server:latest
+    container_name: vscode
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Toronto
+      #- PASSWORD=Proxmoxcandyass87! #optional
+      #- SUDO_PASSWORD=Proxmoxcandyass87! #optional
+    volumes:
+      - ./data:/home/coder/project # Mounting the project directory inside the container
+      - ./config:/config
+    ports:
+      - 8443:8443
+    restart: always
