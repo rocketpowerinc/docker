@@ -12,3 +12,5 @@ services:
     ports:
       - 8004:8000
     restart: always
+
+#Username and Password is admin/admin
