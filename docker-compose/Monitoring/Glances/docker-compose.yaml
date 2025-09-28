@@ -24,7 +24,7 @@ services:
     pid: host
 
     # Container restart policy
-    restart: unless-stopped
+    restart: always
 
     # Volumes to mount into the container
     volumes:
