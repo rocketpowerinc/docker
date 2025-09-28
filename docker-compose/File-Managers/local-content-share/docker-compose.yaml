@@ -6,3 +6,4 @@ services:
       - ./data:/app/data # Change as needed
     ports:
       - 3019:8080
+    restart: always
