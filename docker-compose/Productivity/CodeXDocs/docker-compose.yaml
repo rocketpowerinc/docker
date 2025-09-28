@@ -1,8 +1,7 @@
 services:
   init-config:
     image: alpine:latest
-    command: >
-      sh -c "test -f /config/docs-config.yaml || echo 'app:' > /config/docs-config.yaml"
+    command: sh -c "touch /config/docs-config.yaml"
     volumes:
       - ./docs-config.yaml:/config/docs-config.yaml
 
