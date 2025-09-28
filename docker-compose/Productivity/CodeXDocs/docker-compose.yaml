@@ -1,4 +1,11 @@
 services:
+  init-config:
+    image: alpine:latest
+    command: >
+      sh -c "test -f /config/docs-config.yaml || echo 'app:' > /config/docs-config.yaml"
+    volumes:
+      - ./docs-config.yaml:/config/docs-config.yaml
+
   docs:
     image: ghcr.io/codex-team/codex.docs:latest
     ports:
@@ -10,3 +17,5 @@ services:
       - ./db:/usr/src/app/db
       - ./docs-config.yaml:/usr/src/app/docs-config.yaml
     restart: always
+    depends_on:
+      - init-config
