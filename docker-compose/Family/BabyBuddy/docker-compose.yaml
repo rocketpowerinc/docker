@@ -11,4 +11,4 @@ services:
       - /DATA/AppData/babybuddy/config:/config
     ports:
       - 8004:8000
-    restart: unless-stopped
+    restart: always
