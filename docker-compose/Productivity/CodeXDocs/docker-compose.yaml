@@ -1,0 +1,11 @@
+services:
+  docs:
+    image: ghcr.io/codex-team/codex.docs:latest
+    ports:
+      - "3025:3000"
+    environment:
+      - APP_CONFIG_auth_password=codex
+    volumes:
+      - ./uploads:/usr/src/app/uploads
+      - ./db:/usr/src/app/db
+      - ./docs-config.yaml:/usr/src/app/docs-config.yaml
