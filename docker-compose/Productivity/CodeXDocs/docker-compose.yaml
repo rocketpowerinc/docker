@@ -1,9 +1,9 @@
 services:
   init-config:
     image: alpine:latest
-    command: sh -c "touch /config/docs-config.yaml"
+    command: sh -c "mkdir -p /config && touch /config/docs-config.yaml"
     volumes:
-      - ./docs-config.yaml:/config/docs-config.yaml
+      - ./config:/config # mount a directory, not a file
 
   docs:
     image: ghcr.io/codex-team/codex.docs:latest
@@ -14,7 +14,7 @@ services:
     volumes:
       - ./uploads:/usr/src/app/uploads
       - ./db:/usr/src/app/db
-      - ./docs-config.yaml:/usr/src/app/docs-config.yaml
+      - ./config/docs-config.yaml:/usr/src/app/docs-config.yaml
     restart: always
     depends_on:
       - init-config
