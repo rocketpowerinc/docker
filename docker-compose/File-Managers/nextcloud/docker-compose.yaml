@@ -11,4 +11,4 @@ services:
       - ./data:/data
     ports:
       - 443:443
-    restart: unless-stopped
+    restart: always
