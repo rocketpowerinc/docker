@@ -24,7 +24,7 @@ services:
       - db
     volumes:
       - nextcloud:/var/www/html
-      - ./config/config.php:/var/www/html/config/config.php
+      - ./config:/var/www/html/config
     environment:
       - MYSQL_PASSWORD=nextcloud
       - MYSQL_DATABASE=nextcloud
