@@ -7,12 +7,12 @@ services:
       - nextcloud_aio_mastercontainer:/mnt/docker-aio-config
       - /var/run/docker.sock:/var/run/docker.sock:ro
     ports:
-      - 80:80
-      - 8080:8080
+      - 3025:8080 # map localhost:3025 → container:8080
     environment:
       - APACHE_PORT=11000
-      - APACHE_IP_BINDING=0.0.0.0
+      - APACHE_IP_BINDING=127.0.0.1
       - SKIP_DOMAIN_VALIDATION=true
+      - NEXTCLOUD_ENABLE_LOCALHOST=true # allows localhost setup
 
 volumes:
   nextcloud_aio_mastercontainer:
