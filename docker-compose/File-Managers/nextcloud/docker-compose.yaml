@@ -1,19 +1,31 @@
-services:
-  nextcloud:
-    image: nextcloud/all-in-one:latest
-    restart: always
-    container_name: nextcloud-aio-mastercontainer
-    volumes:
-      - nextcloud_aio_mastercontainer:/mnt/docker-aio-config
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-    ports:
-      - 3025:8080 # map localhost:3025 → container:8080
-    environment:
-      - APACHE_PORT=11000
-      - APACHE_IP_BINDING=127.0.0.1
-      - SKIP_DOMAIN_VALIDATION=true
-      - NEXTCLOUD_ENABLE_LOCALHOST=true # allows localhost setup
-
 volumes:
-  nextcloud_aio_mastercontainer:
-    name: nextcloud_aio_mastercontainer
+  nextcloud:
+  db:
+
+services:
+  db:
+    image: mariadb:10.6
+    restart: always
+    command: --transaction-isolation=READ-COMMITTED --log-bin=binlog --binlog-format=ROW
+    volumes:
+      - db:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=nextcloud
+      - MYSQL_PASSWORD=nextcloud
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+
+  app:
+    image: nextcloud
+    restart: always
+    ports:
+      - 3025:80
+    links:
+      - db
+    volumes:
+      - nextcloud:/var/www/html
+    environment:
+      - MYSQL_PASSWORD=nextcloud
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+      - MYSQL_HOST=db
