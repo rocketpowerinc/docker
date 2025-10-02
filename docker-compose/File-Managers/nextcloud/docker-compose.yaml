@@ -16,7 +16,7 @@ services:
       - MYSQL_USER=nextcloud
 
   nexcloud:
-    image: nextcloud:latest
+    image: nextcloud
     restart: always
     ports:
       - 3025:80
