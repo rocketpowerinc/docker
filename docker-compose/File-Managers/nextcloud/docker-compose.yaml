@@ -4,7 +4,7 @@ volumes:
 
 services:
   db:
-    image: mariadb:10.6
+    image: mariadb:12.1
     restart: always
     command: --transaction-isolation=READ-COMMITTED --log-bin=binlog --binlog-format=ROW
     volumes:
@@ -19,7 +19,7 @@ services:
     image: nextcloud
     restart: always
     ports:
-      - 3025:80
+      - 0.0.0.0:3025:80
     links:
       - db
     volumes:
