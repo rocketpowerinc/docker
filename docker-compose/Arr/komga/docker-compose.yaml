@@ -1,0 +1,14 @@
+services:
+  komga:
+    image: gotson/komga:latest
+    container_name: komga
+    volumes:
+      - ./config:/config
+      - ./data:/data
+    ports:
+      - 25600:25600
+    user: "1000:1000"
+    # remove the whole environment section if you don't need it
+    environment:
+      - TZ=Etc/UTC
+    restart: always
