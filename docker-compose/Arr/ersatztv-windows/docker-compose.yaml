@@ -2,7 +2,7 @@ services:
   ersatztv:
     image: ghcr.io/ersatztv/ersatztv
     container_name: ersatztv
-    restart: unless-stopped
+    restart: always
     environment:
       - TZ=America/Toronto
     ports:

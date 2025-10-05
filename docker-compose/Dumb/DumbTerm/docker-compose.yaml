@@ -2,7 +2,7 @@ services:
   dumbterm:
     image: dumbwareio/dumbterm:latest
     container_name: dumbterm
-    restart: unless-stopped
+    restart: always
     ports:
       - 4005:3000
     volumes:

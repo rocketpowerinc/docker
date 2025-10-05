@@ -2,7 +2,7 @@ services:
   dumbpad:
     image: dumbwareio/dumbpad:latest
     container_name: dumbpad
-    restart: unless-stopped
+    restart: always
     ports:
       - 4004:3000
     volumes:

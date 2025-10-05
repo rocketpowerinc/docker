@@ -2,7 +2,7 @@ services:
   dumbdo:
     image: dumbwareio/dumbdo:latest
     container_name: dumbdo
-    restart: unless-stopped
+    restart: always
     ports:
       - 4002:3000
     volumes:

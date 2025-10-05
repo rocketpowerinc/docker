@@ -2,7 +2,7 @@ services:
   app:
     image: nikunjsingh/glass-keep:latest
     container_name: glass-keep
-    restart: unless-stopped
+    restart: always
     environment:
       NODE_ENV: production
       API_PORT: "8080"

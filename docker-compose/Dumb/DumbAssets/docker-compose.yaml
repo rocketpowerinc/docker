@@ -2,7 +2,7 @@ services:
   dumbassets:
     container_name: dumbassets
     image: dumbwareio/dumbassets:latest
-    restart: unless-stopped
+    restart: always
     ports:
       - 4000:3000
     volumes:

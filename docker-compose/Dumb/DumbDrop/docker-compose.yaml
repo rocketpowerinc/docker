@@ -20,4 +20,4 @@ services:
       # The base URL for the application
       # You must update this to the url you use to access your site
       BASE_URL: http://192.168.1.2:4003
-    restart: unless-stopped
+    restart: always

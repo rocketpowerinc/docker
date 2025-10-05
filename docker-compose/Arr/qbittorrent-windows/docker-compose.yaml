@@ -15,4 +15,4 @@ services:
       - 5799:5799
       - 6881:6881
       - 6881:6881/udp
-    restart: unless-stopped
+    restart: always

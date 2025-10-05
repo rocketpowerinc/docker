@@ -2,7 +2,7 @@ services:
   dumbbudget:
     image: dumbwareio/dumbbudget:latest
     container_name: dumbbudget
-    restart: unless-stopped
+    restart: always
     ports:
       - 4001:3000
     volumes:
