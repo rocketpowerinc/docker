@@ -21,4 +21,4 @@ volumes:
 
 
 #!Initial Login
-#login with admin / dockmon123
+#Open https://localhost:8001 and login with admin / dockmon123
