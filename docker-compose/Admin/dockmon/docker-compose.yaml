@@ -18,3 +18,7 @@ services:
 
 volumes:
   dockmon_data:
+
+
+#!Login
+#login with admin / dockmon123
