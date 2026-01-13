@@ -1,0 +1,11 @@
+services:
+  netv:
+    image: ghcr.io/jvdillon/netv:latest
+    ports:
+      - "3026:8000"
+    volumes:
+      - ./cache:/app/cache
+      - /etc/localtime:/etc/localtime:ro
+    devices:
+      - /dev/dri:/dev/dri # for hardware transcoding (remove if no GPU)
+    restart: unless-stopped
