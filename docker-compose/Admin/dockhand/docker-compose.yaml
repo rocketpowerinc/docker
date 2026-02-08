@@ -8,3 +8,5 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./dockhand_data:/app/data
+      - "${HOME}:/${HOME}"
+
