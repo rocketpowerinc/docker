@@ -6,5 +6,5 @@ services:
       - "5800:5800"
     volumes:
       - ./config:/config:rw
-      - "${HOME}/Downloads:/output:rw"
+      - "/home/rocket/Downloads:/output:rw"
     restart: always
